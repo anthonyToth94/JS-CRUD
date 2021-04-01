@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Webshop</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        text-align: center;
+        text-shadow: 0px 0px 5px black;
+        color: white;
+        background: rgb(44, 44, 44);
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        font-size: 25px;
+        padding: 10px 0;
+      }
+
+      h1 {
+        font-size: 40px;
+        margin: 10px;
+      }
+      h3 {
+        font-size: 30px;
+      }
+
+      input[type="text"] {
+        outline: 0;
+        border: 0;
+        color: white;
+        font-size: 20px;
+        width: 300px;
+        border-bottom: 2px solid brown;
+        background: url(img/product.png) no-repeat;
+        background-position: 0px;
+        background-size: 40px;
+        padding: 10px 50px;
+      }
+
+      input[name="price"] {
+        outline: 0;
+        border: 0;
+        color: white;
+        font-size: 20px;
+        width: 300px;
+        border-bottom: 2px solid brown;
+
+        background: url(img/price.png) no-repeat;
+        background-position: 0px;
+        background-size: 30px;
+        padding: 10px 50px;
+      }
+      button[type="submit"] {
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 50px;
+        border: none;
+        outline: 0;
+        cursor: pointer;
+        background: brown;
+        color: white;
+      }
+      button[type="submit"]:hover {
+        color: rgb(223, 144, 70);
+      }
+      #checkbox {
+        margin: 0 10px;
+        transform: scale(1.5);
+        cursor: pointer;
+      }
+      .products {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        align-items: center;
+        font-size: 30px;
+        flex-wrap: wrap;
+      }
+
+      input:first-child {
+        margin-bottom: 10px;
+      }
+      .edit-products {
+        display: flex;
+        flex-direction: column;
+        font-size: 25px;
+        padding: 10px 0;
+      }
+
+      /* AFTER CHANGE */
+      .wrappem {
+        max-width: 300px;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 40px;
+        border: 1px solid black;
+        box-shadow: 0 0 8px 1px black;
+        background: brown;
+        margin: 0 20px 20px 20px;
+      }
+      .wrappem h3,
+      p {
+        margin-bottom: 10px;
+      }
+      .boxok {
+        padding: 15px;
+        border: 2px solid rgb(105, 80, 80);
+        margin: 0 20px 20px 0;
+      }
+      .delete {
+        margin: auto;
+        margin-top: 10px;
+        padding: 5px;
+        transition: 0.2s;
+        font-size: 20px;
+        border: 3px solid black;
+        color: white;
+        background: rgb(26, 26, 26);
+      }
+      .delete:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+      .edit {
+        margin: auto;
+        margin-top: 10px;
+        padding: 5px 15px;
+        transition: 0.2s;
+        font-size: 20px;
+        border: 3px solid black;
+        color: white;
+        background: rgb(223, 144, 70);
+      }
+      .edit:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+      .opacity {
+        opacity: 30%;
+      }
+      #editForm {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Products</h1>
+    <div class="products"></div>
+
+    <h3>Create a new product:</h3>
+    <form>
+      <!-- row 1 -->
+      <div style="margin-bottom: 20px; margin-top: 20px">
+        <input
+          class="input"
+          type="text"
+          name="name"
+          autocomplete="off"
+          maxlength="15"
+          placeholder="Name..."
+        />
+      </div>
+
+      <!-- row 2 -->
+      <div style="margin-left: 20px">
+        <!-- new pattern "\d*"  only number-->
+        <input
+          type="number"
+          name="price"
+          autocomplete="off"
+          placeholder="Price..."
+          style="padding-left: 40px"
+        />
+      </div>
+
+      <!-- row 3 -->
+      <div>
+        <label>
+          Is in stock?
+          <input type="checkbox" name="isInStock" id="checkbox" />
+        </label>
+        <button type="submit">Add</button>
+      </div>
+    </form>
+
+    <div class="row">
+      <div class="edit-products"></div>
+    </div>
+    <script src="javascript.js"></script>
+  </body>
+</html>
